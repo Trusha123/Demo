@@ -23,27 +23,27 @@ object HdfsFileFormat {
     df.show()
 
     //store displayed records in HDFS
-   df.write.csv(path = "hdfs://hadoop.localhost:9000/test/Display_record")
+ //  df.write.csv(path = "hdfs://hadoop.localhost:9000/test/Display_record")
 
 
     //To filter by regions
-    val df1 = df.filter(df("Region")==="Northeast")
-    df1.show()
-    df1.write.csv(path = "hdfs://hadoop.localhost:9000/test/New_Northeast")
-    val df2 = df.filter(df("Region")==="South")
-    df2.show()
-    df1.write.csv(path = "hdfs://hadoop.localhost:9000/test/New_South")
+    //val df1 = df.filter(df("Region")==="Northeast")
+    //df1.show()
+   // df1.write.csv(path = "hdfs://hadoop.localhost:9000/test/New_Northeast")
+    //val df2 = df.filter(df("Region")==="South")
+    //df2.show()
+    //df1.write.csv(path = "hdfs://hadoop.localhost:9000/test/New_South")
     val df3 = df.filter(df("Region")==="Midwest")
-    df3.show()
-    df1.write.csv(path = "hdfs://hadoop.localhost:9000/test/New_Midwest")
+    //df3.show()
+    //df1.write.csv(path = "hdfs://hadoop.localhost:9000/test/New_Midwest")
     val df4 = df.filter(df("Region")==="West")
-    df4.show()
-    df1.write.csv(path = "hdfs://hadoop.localhost:9000/test/New_West")
+    //df4.show()
+    //df1.write.csv(path = "hdfs://hadoop.localhost:9000/test/New_West")
     val df5 = df.filter(df("Region")==="East")
-    df5.show()
-    df1.write.csv(path = "hdfs://hadoop.localhost:9000/test/New_East")
+    //df5.show()
+    //df1.write.csv(path = "hdfs://hadoop.localhost:9000/test/New_East")
 
-    df.write.partitionBy(colNames = "Region").csv(path = "hdfs://hadoop.localhost:9000/test/Newdataset")
+    //df.write.partitionBy(colNames = "Region").csv(path = "hdfs://hadoop.localhost:9000/test/Newdataset")
 
     //df.select("Region").show()
     //df.select("Region").collect()
